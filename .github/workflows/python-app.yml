@@ -22,6 +22,6 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run
-      run: python test.py
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
+      run: python zc.py
+# - name: SSH connection to Actions
+# uses: P3TERX/debugger-action@master
