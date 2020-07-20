@@ -31,7 +31,6 @@ jobs:
         ftp-server: ${{ secrets.FTPS_SERVER }}
         ftp-username: ${{ secrets.FTPS_USERNAME }}
         ftp-password: ${{ secrets.FTPS_PASSWORD }}
-        git-ftp-args: --dry-run
 # - name: SSH connection to Actions
 # uses: P3TERX/debugger-action@master    
 # run: touch /tmp/keepalive
