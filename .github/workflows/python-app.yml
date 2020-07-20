@@ -1,0 +1,49 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: actions-pyv2zhuce
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+   - cron: '* */3 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        run: pip install -r ./requirements.txt
+    - name: 'Working'
+        run: bash ./run.sh
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v2
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{secrets.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: Github Actions job result
+        # Literal body:
+        body: Build job of ${{github.repository}} completed successfully!
+        # Read file contents as body:
+        body: file://README.md
+        to: obiwan@tatooine.com,yoda@dagobah.com
+        from: Luke Skywalker # <user@example.com>
+        # Optional content type (defaults to text/plain):
+        content_type: text/html
+        # Optional attachments:
+        attachments: attachments.zip,git.diff,./dist/static/main.js
+        attachments: attachments.zip,git.diff,./dist/static/main.js
