@@ -1,8 +1,9 @@
-*/.github
-*/.git-ftp.log
-*/.git-ftp-include
+.github/*
+*.py
+*.txt
+*.md
+.git-ftp.log
+.git-ftp-include
+.git-ftp-ignore
 */main.sh
 */README.md
-*/requirements.txt
-*/test.py
-*/zc.py
