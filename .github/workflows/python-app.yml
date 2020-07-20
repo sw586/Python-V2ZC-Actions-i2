@@ -1,11 +1,12 @@
-# This workflow will install Python dependencies14, run tests and lint with a single version of SPython
-# For more information see: https://help.github.com/actions/language-and-framework-gu32ides/using-python-with-github-acti9ons
+#  GitHub Actions Python V2zc1.0@sw586 - 2020/07/21
 
 name: Python application
 
 on:
   push:
     branches: [ master ]
+  schedule:
+    - cron: '0 */6 * * *'
 jobs:
   build:
 
@@ -27,8 +28,9 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://vhost104.cloudvhost.top/WEB/
-        ftp-username: webmaster@HA435677
+        ftp-server: ${{ secrets.FTPS_SERVER }}
+        ftp-username: ${{ secrets.FTPS_USERNAME }}
         ftp-password: ${{ secrets.FTPS_PASSWORD }}
-#    - name: SSH connection to Actions
-#      uses: P3TERX/debugger-action@master
+# - name: SSH connection to Actions
+# uses: P3TERX/debugger-action@master    
+# run: touch /tmp/keepalive
