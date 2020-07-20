@@ -11,8 +11,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
@@ -25,3 +23,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run
       run: python test.py
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
