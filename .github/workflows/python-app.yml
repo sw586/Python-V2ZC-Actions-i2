@@ -15,18 +15,19 @@ jobs:
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: run
-      run: python zc.py
+        fetch-depth: 2
+#         python-version: 3.8
+#     - name: Install dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install flake8 pytest
+#         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+#     - name: run
+#       run: python zc.py
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://vhost104.cloudvhost.top:21/
+        ftp-server: ftp://vhost104.cloudvhost.top/WEB/
         ftp-username: webmaster@HA435677
         ftp-password: ${{ secrets.FTPS_PASSWORD }}
 
