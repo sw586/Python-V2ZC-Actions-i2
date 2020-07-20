@@ -2,8 +2,7 @@
 *.py
 *.txt
 *.md
-.git-ftp.log
+*.sh
+*.log
 .git-ftp-include
 .git-ftp-ignore
-*/main.sh
-*/README.md
