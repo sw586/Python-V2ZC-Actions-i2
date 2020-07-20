@@ -23,5 +23,14 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run
       run: python zc.py
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://vhost104.cloudvhost.top:21/
+        ftp-username: webmaster@HA435677
+        ftp-password: ${{ secrets.FTPS_PASSWORD }}
+
+
+
 # - name: SSH connection to Actions
 # uses: P3TERX/debugger-action@master
