@@ -30,8 +30,7 @@ jobs:
         ftp-server: ftp://vhost104.cloudvhost.top/WEB/
         ftp-username: webmaster@HA435677
         ftp-password: ${{ secrets.FTPS_PASSWORD }}
-
-
+        local-dir: ./
 
 # - name: SSH connection to Actions
 # uses: P3TERX/debugger-action@master
