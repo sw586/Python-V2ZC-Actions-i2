@@ -66,22 +66,22 @@ soup = BeautifulSoup(r4.text,'lxml')
 
 soup1 = soup.select('a[class="btn btn-icon icon-left btn-primary btn-v2ray copy-text btn-lg btn-round"]')
 for i in soup1:(i['data-clipboard-text'])
-print(i['data-clipboard-text']) # 获取链接
+#print(i['data-clipboard-text']) # 获取链接
 soup2 = (i['data-clipboard-text'])
 
 
 # 现实用户名
-soup3 = soup.select('div[class="d-sm-none d-lg-inline-block"]')
-for i in soup3:
-	print(i.text)#获取现实用户名
+#soup3 = soup.select('div[class="d-sm-none d-lg-inline-block"]')
+#for i in soup3:
+#	print(i.text)#获取现实用户名
 
 #下载v2ray订阅文本
-path="v4.txt"
-r=requests.get(soup2)
-print('ok')
-with open(path,"wb") as f:
-    f.write(r.content)
-f.close()
+#path="v4.txt"
+#r=requests.get(soup2)
+#print('ok')
+#with open(path,"wb") as f:
+#    f.write(r.content)
+#f.close()
 
 #将V2订阅链接写入301.php文件
 php1="<?php "
