@@ -51,7 +51,7 @@ r2=requests.post('https://www.it-ss.xyz/auth/login',data={'email':(salt+em),'pas
 cookies2=r2.cookies.get_dict() # 获取登录页面返回的cokies信息
 
 # 开通免费套餐
-r3=requests.post('https://www.it-ss.xyz/user/buy',data={'shop':"33",'disableothers':"1"},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies2)
+r3=requests.post('https://www.it-ss.xyz/user/buy',data={'shop':"33",'autorenew':"0",'disableothers':"1"},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies2)
 
 
 # 访问会员中心
