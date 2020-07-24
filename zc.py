@@ -94,13 +94,13 @@ message = "Location:"
 neirong=php1+header+khr+  '"'+message+''+''+url301+'"'+khl+php2
 
 # 打开一个文件将V2订阅链接写入301.php文件
-fo = open("it-ss.php", "w")
+fo = open("i.php", "w")
 fo.write(neirong)
 # 关闭打开的文件
 fo.close()
 
 # 打开一个文件将V2订阅链接写入301.php文件
-fo = open("it-ss.html", "w")
+fo = open("i.html", "w")
 fo.write(soup2)
 # 关闭打开的文件
 fo.close()
