@@ -3,9 +3,8 @@
 name: Python application
 
 on:
-  repository_dispatch:
-  release:
-    types: published
+  watch:
+    types: started
   push:
     branches: [ master ]
   schedule:
