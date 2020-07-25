@@ -16,7 +16,8 @@ import string
 def ranstr(num):
     salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
     return salt
-salt = ranstr(8)
+#salt = ranstr(8)
+salt = "Li243MWE"
 em = "@gmail.com"
 
 redata={
@@ -26,24 +27,14 @@ redata={
     'repasswd':(salt),
     'code':'0'
 }
-
-# diy = "7edizo9cs"
-# redata={
-#     'email':(diy+em),
-#     'name': (diy),
-#     'passwd':(diy),
-#     'repasswd':(diy),
-#     'code':'0'
-# }
-
 # 注册变量
 #访问注册页面
 r0=requests.get('https://www.it-ss.xyz/auth/login',headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'}, )
 cookies=r0.cookies.get_dict()
 
 # 注册账号
-r1=requests.post('https://www.it-ss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
-print(redata)
+#r1=requests.post('https://www.it-ss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
+#print(redata)
 
 
 # 登录账号
@@ -68,20 +59,6 @@ soup1 = soup.select('a[class="btn btn-icon icon-left btn-primary btn-v2ray copy-
 for i in soup1:(i['data-clipboard-text'])
 #print(i['data-clipboard-text']) # 获取链接
 soup2 = (i['data-clipboard-text'])
-
-
-# 现实用户名
-#soup3 = soup.select('div[class="d-sm-none d-lg-inline-block"]')
-#for i in soup3:
-#	print(i.text)#获取现实用户名
-
-#下载v2ray订阅文本
-#path="v4.txt"
-#r=requests.get(soup2)
-#print('ok')
-#with open(path,"wb") as f:
-#    f.write(r.content)
-#f.close()
 
 #将V2订阅链接写入301.php文件
 php1="<?php "
