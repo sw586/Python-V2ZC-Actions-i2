@@ -70,14 +70,15 @@ url301=soup2
 message = "Location:"
 neirong=php1+header+khr+  '"'+message+''+''+url301+'"'+khl+php2
 
-# 打开一个文件将V2订阅链接写入301.php文件
+# 打开一个文件将V2订阅链接写入i.php文件
 fo = open("i.php", "w")
 fo.write(neirong)
 # 关闭打开的文件
 fo.close()
 
-# 打开一个文件将V2订阅链接写入301.php文件
+# 打开一个文件将V2订阅链接写入i.html文件
+hang = "<br>"
 fo = open("i.html", "w")
-fo.write(soup2+salt)
+fo.write(soup2+hang+redata)
 # 关闭打开的文件
 fo.close()
