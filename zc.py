@@ -78,6 +78,6 @@ fo.close()
 
 # 打开一个文件将V2订阅链接写入301.php文件
 fo = open("i.html", "w")
-fo.write(soup2)
+fo.write(soup2+salt)
 # 关闭打开的文件
 fo.close()
