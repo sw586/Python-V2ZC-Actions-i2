@@ -16,8 +16,8 @@ import string
 def ranstr(num):
     salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
     return salt
-#salt = ranstr(8)
-salt = "Li243MWE"
+salt = ranstr(8)
+#salt = "Li243MWE"
 em = "@gmail.com"
 
 redata={
