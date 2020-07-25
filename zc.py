@@ -77,8 +77,8 @@ fo.write(neirong)
 fo.close()
 
 # 打开一个文件将V2订阅链接写入i.html文件
-hang = "<br"
-hang2 = ">"
+hang="<br"
+hang2=">"
 fo = open("i.html", "w")
 fo.write(soup2+hang+hang2+redata)
 # 关闭打开的文件
