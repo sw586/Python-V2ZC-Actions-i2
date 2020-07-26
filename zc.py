@@ -14,12 +14,12 @@ import string
 import time
 
 # 注册变量
-def ranstr(num):
-    salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
-    return salt
-salt = ranstr(8)
+#def ranstr(num):
+#    salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
+#    return salt
+#salt = ranstr(8)
 salt = "8KEISYus"
-#em = "@gmail.com"
+em = "@gmail.com"
 
 redata={
     'email':(salt+em),
