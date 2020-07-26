@@ -16,9 +16,9 @@ import string
 def ranstr(num):
     salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
     return salt
-salt = ranstr(8)
+#salt = ranstr(8)
 salt = "TA7Knmqa"
-#em = "@gmail.com"
+em = "@gmail.com"
 
 redata={
     'email':(salt+em),
