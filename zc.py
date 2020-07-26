@@ -58,9 +58,6 @@ soup = BeautifulSoup(r4.text,'lxml')
 
 soup1 = soup.select('a[class="btn btn-icon icon-left btn-primary btn-v2ray copy-text btn-lg btn-round"]')
 for i in soup1:(i['data-clipboard-text'])
-#print(i['data-clipboard-text']) # 获取链接
-soup2 = (i['data-clipboard-text'])
-print(soup2)
 
 #将V2订阅链接写入301.php文件
 php1="<?php "
@@ -68,7 +65,7 @@ php2=" ?>"
 khr="("
 khl=")"
 header="header"
-url301=soup2
+url301=(i['data-clipboard-text'])
 message = "Location:"
 neirong=php1+header+khr+  '"'+message+''+''+url301+'"'+khl+php2
 
@@ -85,7 +82,7 @@ time.sleep(3)
 br="<br"
 br2=">"
 fo = open("i.html", "w")
-fo.write(soup2+br+br2+salt+em)
+fo.write((i['data-clipboard-text'])+br+br2+salt+em)
 # 关闭打开的文件
 fo.close()
 
