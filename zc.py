@@ -18,8 +18,8 @@ def ranstr(num):
     salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
     return salt
 salt = ranstr(8)
-salt = "8KEISYus"
-#em = "@gmail.com"
+#salt = "8KEISYus"
+em = "@gmail.com"
 
 redata={
     'email':(salt+em),
@@ -78,6 +78,9 @@ fo.write(neirong)
 # 关闭打开的文件
 fo.close()
 
+# 延时3秒再登录
+time.sleep(3)
+
 # 打开一个文件将V2订阅链接写入i.html文件
 br="<br"
 br2=">"
@@ -85,3 +88,6 @@ fo = open("i.html", "w")
 fo.write(soup2+br+br2+salt+em)
 # 关闭打开的文件
 fo.close()
+
+# 延时3秒再登录
+time.sleep(3)
