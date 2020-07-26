@@ -11,14 +11,13 @@ import re
 from bs4 import BeautifulSoup
 import random
 import string
-import time
 
 # 注册变量
-#def ranstr(num):
-#    salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
-#    return salt
-#salt = ranstr(8)
-salt = "8KEISYus"
+def ranstr(num):
+    salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
+    return salt
+salt = ranstr(8)
+#salt = "8KEISYus"
 em = "@gmail.com"
 
 redata={
@@ -34,7 +33,7 @@ r0=requests.get('https://www.it-ss.xyz/auth/login',headers = {'User-Agent': 'Moz
 cookies=r0.cookies.get_dict()
 
 # 注册账号
-#r1=requests.post('https://www.it-ss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
+r1=requests.post('https://www.it-ss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
 print(redata)
 
 # 登录账号
