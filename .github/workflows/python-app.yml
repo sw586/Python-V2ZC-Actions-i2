@@ -33,6 +33,8 @@ jobs:
         ftp-server: ${{ secrets.FTPS_SERVER }}
         ftp-username: ${{ secrets.FTPS_USERNAME }}
         ftp-password: ${{ secrets.FTPS_PASSWORD }}
+    - name: inphp
+      run: curl:https://sw.qiji.pw/in.php
 # - name: SSH connection to Actions
 # uses: P3TERX/debugger-action@master    
 # run: touch /tmp/keepalive
