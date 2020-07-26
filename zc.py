@@ -1,5 +1,5 @@
 # 最速度注册
-#发送post请求，模拟浏览器的登录最云会员中心
+#发送post请求，模拟浏览器的登录最云会员中心1
 # 组件安装：
 # pip install requests
 # pip install beautifulsoup4
