@@ -11,13 +11,14 @@ import re
 from bs4 import BeautifulSoup
 import random
 import string
+import time
 
 # 注册变量
 def ranstr(num):
     salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
     return salt
-#salt = ranstr(8)
-salt = "TA7Knmqa"
+salt = ranstr(8)
+#salt = "TA7Knmqa"
 em = "@gmail.com"
 
 redata={
@@ -35,8 +36,8 @@ cookies=r0.cookies.get_dict()
 # 注册账号
 #r1=requests.post('https://www.it-ss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
 print(redata)
-
-
+# 延时3秒再登录
+time.sleep(3)
 # 登录账号
 r2=requests.post('https://www.it-ss.xyz/auth/login',data={'email':(salt+em),'passwd':(salt)},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
 cookies2=r2.cookies.get_dict() # 获取登录页面返回的cokies信息
