@@ -59,28 +59,3 @@ for i in soup1:(i['data-clipboard-text'])
 #print(i['data-clipboard-text']) # 获取链接
 #soup2 = (i['data-clipboard-text'])
 print(soup1)
-
-#将V2订阅链接写入301.php文件
-php1="<?php "
-php2=" ?>"
-khr="("
-khl=")"
-header="header"
-url301=soup2
-message = "Location:"
-neirong=php1+header+khr+  '"'+message+''+''+url301+'"'+khl+php2
-
-# 打开一个文件将V2订阅链接写入i.php文件
-fo = open("i.php", "w")
-fo.write(neirong)
-# 关闭打开的文件
-fo.close()
-
-
-# 打开一个文件将V2订阅链接写入i.html文件
-br="<br"
-br2=">"
-fo = open("i.html", "w")
-fo.write(soup2+br+br2+salt+em)
-# 关闭打开的文件
-fo.close()
