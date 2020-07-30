@@ -57,8 +57,8 @@ soup = BeautifulSoup(r4.text,'lxml')
 soup1 = soup.select('a[class="btn btn-icon icon-left btn-primary btn-v2ray copy-text btn-lg btn-round"]')
 for i in soup1:(i['data-clipboard-text'])
 #print(i['data-clipboard-text']) # 获取链接
-soup2 = (i['data-clipboard-text'])
-print(soup2)
+#soup2 = (i['data-clipboard-text'])
+print(soup1)
 
 #将V2订阅链接写入301.php文件
 php1="<?php "
