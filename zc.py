@@ -13,11 +13,11 @@ import random
 import string
 
 # 注册变量
-def ranstr(num):
-    salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
-    return salt
-salt = ranstr(8)
-#salt = "8KEISYus"
+#def ranstr(num):
+#    salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
+#    return salt
+#salt = ranstr(8)
+salt = "8KEISYus"
 em = "@gmail.com"
 
 redata={
@@ -33,7 +33,7 @@ r0=requests.get('https://www.it-ss.xyz/auth/login',headers = {'User-Agent': 'Moz
 cookies=r0.cookies.get_dict()
 
 # 注册账号
-r1=requests.post('https://www.it-ss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
+#r1=requests.post('https://www.it-ss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
 print(redata)
 
 # 登录账号
@@ -57,5 +57,30 @@ soup = BeautifulSoup(r4.text,'lxml')
 soup1 = soup.select('a[class="btn btn-icon icon-left btn-primary btn-v2ray copy-text btn-lg btn-round"]')
 for i in soup1:(i['data-clipboard-text'])
 #print(i['data-clipboard-text']) # 获取链接
-#soup2 = (i['data-clipboard-text'])
-print(soup1)
+soup2 = (i['data-clipboard-text'])
+print(soup2)
+
+#将V2订阅链接写入301.php文件
+php1="<?php "
+php2=" ?>"
+khr="("
+khl=")"
+header="header"
+url301=soup2
+message = "Location:"
+neirong=php1+header+khr+  '"'+message+''+''+url301+'"'+khl+php2
+
+# 打开一个文件将V2订阅链接写入i.php文件
+fo = open("i.php", "w")
+fo.write(neirong)
+# 关闭打开的文件
+fo.close()
+
+
+# 打开一个文件将V2订阅链接写入i.html文件
+br="<br"
+br2=">"
+fo = open("i.html", "w")
+fo.write(soup2+br+br2+salt+em)
+# 关闭打开的文件
+fo.close()
