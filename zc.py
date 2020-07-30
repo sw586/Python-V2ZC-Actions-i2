@@ -17,7 +17,7 @@ import string
 #    salt = ''.join(random.sample(string.ascii_letters + string.digits, num))
 #    return salt
 #salt = ranstr(8)
-salt = "8KEISYus"
+salt = "i0PGS7TR"
 em = "@gmail.com"
 
 redata={
