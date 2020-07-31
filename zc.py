@@ -29,25 +29,27 @@ redata={
 }
 # 注册变量
 #访问注册页面
-r0=requests.get('https://www.luckyss.xyz/auth/login',headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'}, )
+r0=requests.get('https://ufocloud.xyz/auth/login',headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'}, )
 cookies=r0.cookies.get_dict()
 
 # 注册账号
-r1=requests.post('https://www.luckyss.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
+r1=requests.post('https://ufocloud.xyz/auth/register',data=redata,headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
 print(redata)
 
 # 登录账号
-r2=requests.post('https://www.luckyss.xyz/auth/login',data={'email':(salt+em),'passwd':(salt)},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
+r2=requests.post('https://ufocloud.xyz/auth/login',data={'email':(salt+em),'passwd':(salt)},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies)
 cookies2=r2.cookies.get_dict() # 获取登录页面返回的cokies信息
 
 # 开通免费套餐
-r3=requests.post('https://www.luckyss.xyz/user/buy',data={'shop':"33",'autorenew':"0",'disableothers':"1"},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies2)
+#r3=requests.post('https://ufocloud.xyz/user/buy',data={'shop':"33",'autorenew':"0",'disableothers':"1"},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies2)
+# 签到领取流量
+r4=requests.post('https://ufocloud.xyz/user/checkin',headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies2)
 
 
 # 访问会员中心
 from requests_html import HTMLSession
 session = HTMLSession()
-url="https://www.luckyss.xyz/user"
+url="https://ufocloud.xyz/user"
 r4=session.get(url,cookies=cookies2)
 
 
@@ -58,6 +60,8 @@ soup1 = soup.select('a[class="btn btn-icon icon-left btn-primary btn-v2ray copy-
 for i in soup1:(i['data-clipboard-text'])
 #print(i['data-clipboard-text']) # 获取链接
 soup2 = (i['data-clipboard-text'])
+print (soup2)
+
 #将V2订阅链接写入301.php文件
 php1="<?php "
 php2=" ?>"
