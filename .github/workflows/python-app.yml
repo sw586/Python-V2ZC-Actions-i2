@@ -7,8 +7,8 @@ on:
     types: started
 #  push:
 #    branches: [ master ]
-  schedule:
-    - cron: '0 */5 * * *'
+#  schedule:
+#    - cron: '0 */5 * * *'
 jobs:
   build:
 
