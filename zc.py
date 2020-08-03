@@ -73,7 +73,7 @@ message = "Location:"
 neirong=php1+header+khr+  '"'+message+''+''+url301+'"'+khl+php2
 
 # 打开一个文件将V2订阅链接写入i.php文件
-fo = open("i.php", "w")
+fo = open("i2.php", "w")
 fo.write(neirong)
 # 关闭打开的文件
 fo.close()
@@ -82,7 +82,7 @@ fo.close()
 # 打开一个文件将V2订阅链接写入i.html文件
 br="<br"
 br2=">"
-fo = open("i.html", "w")
+fo = open("i2.html", "w")
 fo.write(soup2+br+br2+salt+em)
 # 关闭打开的文件
 fo.close()
