@@ -39,6 +39,8 @@ jobs:
           -  **/.git*/**
           - zc.py
           - README.md
+          - .git-ftp.log
+          - .ftp-deploy-sync-state.json
           - requirements.txt
           - .github/**
           - .idea/**
