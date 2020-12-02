@@ -38,6 +38,7 @@ jobs:
           - .git*/**
           -  **/.git*/**
           - zc.py
+          - in.php
           - README.md
           - .git-ftp.log
           - .ftp-deploy-sync-state.json
