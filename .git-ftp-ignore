@@ -1,8 +1,0 @@
-.github/*
-*.py
-*.txt
-*.md
-*.sh
-*.log
-.git-ftp-include
-.git-ftp-ignore
