@@ -40,7 +40,6 @@ jobs:
           - zc.py
           - README.md
           - requirements.txt
-          - .ftp-deploy-sync-state.json
           - .github/**
           - .idea/**
     - name: inphp
