@@ -1,0 +1,1 @@
+<?php header("Location:http://xiaobai.network/link/QbMvLaJGNeDJzyXr?sub=3&extend=1") ?>

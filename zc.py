@@ -44,23 +44,25 @@ cookies2=r2.cookies.get_dict() # 获取登录页面返回的cokies信息
 #r3=requests.post('https://ufocloud.xyz/user/buy',data={'shop':"33",'autorenew':"0",'disableothers':"1"},headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies2)
 # 签到领取流量
 r4=requests.post('https://xiaobai.network/user/checkin',headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'},cookies=cookies2)
+print(r4.text)
 
 
 # 访问会员中心
 from requests_html import HTMLSession
 session = HTMLSession()
-url="https://xiaobai.network"
-r4=session.get(url,cookies=cookies2)
+url="https://xiaobai.network/user"
+r5=session.get(url,cookies=cookies2)
 
 
-r4.encoding = 'utf-8'
-soup = BeautifulSoup(r4.text,'lxml')
+r5.encoding = 'utf-8'
+soup = BeautifulSoup(r5.text,'lxml')
 
 soup1 = soup.select('a[class="btn btn-icon icon-left btn-primary btn-v2ray copy-text btn-lg btn-round"]')
 for i in soup1:(i['data-clipboard-text'])
-#print(i['data-clipboard-text']) # 获取链接
+print(i['data-clipboard-text']) # 获取链接
+
+
 soup2 = (i['data-clipboard-text'])
-print (soup2)
 
 #将V2订阅链接写入301.php文件
 php1="<?php "
